@@ -1,0 +1,1 @@
+https://proyectosumb.mx//REPZYV/produccion/verificar_codigo.php?email=gilbertovelazquez546%40gmail.comhttps://proyectosumb.mx//REPZYV/produccion/verificar_codigo.php?email=gilbertovelazquez546%40gmail.com

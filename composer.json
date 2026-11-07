@@ -1,0 +1,26 @@
+{
+    "name": "zoonosis/icon-system",
+    "description": "Sistema profesional de iconos para aplicación Zoonosis",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "intervention/image": "^2.7",
+        "symfony/var-dumper": "^5.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "shuchkin/simplexls": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "dompdf/dompdf": "^3.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zoonosis\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    }
+}

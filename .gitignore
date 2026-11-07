@@ -1,0 +1,33 @@
+# Composer
+vendor/
+composer.lock
+
+# PHP
+*.php~
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporal
+tmp/
+temp/
+cache/
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
+
+# Configuración local
+.env.local
+config.local.php
+
+# Storage
+storage/pdfs/*
+!storage/pdfs/.gitkeep

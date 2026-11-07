@@ -1,0 +1,10 @@
+{
+    "registro_publico": true,
+    "modo_mantenimiento": false,
+    "mensaje_mantenimiento": "El sistema se encuentra en mantenimiento. Por favor, intente más tarde.",
+    "fecha_mantenimiento": null,
+    "anio_activo": 2026,
+    "mes_actual": 1,
+    "anio_actual": 2026,
+    "usar_fecha_servidor": true
+}

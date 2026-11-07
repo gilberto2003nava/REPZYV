@@ -1,0 +1,47 @@
+# SEGURIDAD MEJORADA
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Prevenir acceso a archivos sensibles
+    RewriteRule ^includes/ - [F,L]
+    RewriteRule ^sql/ - [F,L]
+    RewriteRule ^vendor/ - [F,L]
+    RewriteRule ^storage/screenshots/ - [F,L]
+    RewriteRule \.git - [F,L]
+    RewriteRule \.env - [F,L]
+    RewriteRule \.md$ - [F,L]
+    RewriteRule \.py$ - [F,L]
+    RewriteRule \.bat$ - [F,L]
+</IfModule>
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Proteger archivos de configuración
+<FilesMatch "^(\.htaccess|\.env|config\.php|composer\.json|composer\.lock|\.git.*|.*\.md|.*\.py|.*\.bat)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Límites de subida
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+php_value memory_limit 256M
+
+# Proteger contra inyección SQL
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F,L]
+</IfModule>
